@@ -261,6 +261,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 <div class="team-content-right transition_2" >
 
+<div id="team-joined" style="display: none;">
+   <div class="file-thumb">
+	<img id="thumb_img" src="images/main/team.gif">
+   </div>
+   <div class="file-pre-box">
+      <h3>已经加入的小组</h3>
+        <ul id="team-joined-box">
+          
+        </ul>
+   </div>
+   
+</div>
+
+<div id="team-mark-result">
 <div class="file-thumb">
 	<img id="thumb_img" src="images/main/files.png">
 </div>
@@ -300,8 +314,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div id="colla_items" class="pre-box"></div>
 
-   
-   
+
+</div>   
             </div>
 </div>
 

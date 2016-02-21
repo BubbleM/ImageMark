@@ -28,7 +28,7 @@ body,html{
 .banner-left{
 	position: absolute;left:40px;width: 70px;
 	height: 70px; top:50%;margin-top:-35px;
-	background-image: url('images/left.png');
+	background-image: url('../images/left.png');
 	background-size: 70px 70px;
 	cursor:pointer;
 	z-index:1;
@@ -38,7 +38,7 @@ body,html{
 .banner-right{
 	position: absolute;right:40px;width: 70px;
 	height: 70px; top:50%;margin-top:-35px;
-	background-image: url('images/right.png');
+	background-image: url('../images/right.png');
 	background-size: 70px 70px;
 	cursor:pointer;
 	z-index:1;
@@ -72,7 +72,7 @@ body,html{
 	display:block;
 }
 .banner.banner1{
-	background-image:url(../images/banner2.jpg);
+	background-image:url(../images/banner1.jpg);
 }
 .banner.banner2{
 	background-image: url(../images/banner2.jpg);

@@ -189,6 +189,33 @@ public class UserDao {
 			return teams;
 		}
 		
+		 /**
+		  * 对应用户，参加的team
+		  * @return
+		  */
+		public List<Team> getAllTeamJoined(int userId){
+			String sql="select * from team where team_id in (select team_id from team_user where user_id = "+userId+" ) ";
+			List<Team> teams = new ArrayList<Team>();
+			try {
+				st = conn.createStatement();
+				ResultSet rs = st.executeQuery(sql);    //执行sql查询语句，返回查询数据的结果集  
+		        while (rs.next()) { // 判断是否还有下一个数据  
+		           Team team = new Team();
+		           team.setTeamId(rs.getInt("team_id"));
+		           team.setTeamName(rs.getString("team_name"));
+		           team.setTeamOwner(rs.getInt("team_owner"));
+		           team.setTeamPassword(rs.getString("team_password"));
+		           
+		           teams.add(team);		         
+		        }  
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}   
+			
+			return teams;
+		}
+		
 		//根据teamid查询team的信息
 		public Team getTeamById(int teamId){
 			String sql = "select * from team where team_id = "+teamId+"";
@@ -373,6 +400,8 @@ public class UserDao {
 				}
 				return false;
 		}
+		
+		
 		
 		//删除小组
 		public void deleteTeam(int teamId){

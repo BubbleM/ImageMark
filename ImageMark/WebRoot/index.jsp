@@ -38,6 +38,8 @@ if(isIE6){
 }
 </script>
 
+<script type="text/javascript" charset="UTF-8" src="js/jquery.min.js"></script>
+
 <link type='text/css' rel='stylesheet' href='css/home.css'/>
 
 </head>
@@ -54,7 +56,7 @@ if(isIE6){
 	       一段介绍。
 	        <div class="banner-op" style="bottom:-75px;"> <a href="login.jsp" class="button green banner-btn">登录</a>&nbsp;&nbsp;&nbsp; <a href="signup.jsp" class="button default banner-btn">注册</a> </div>
           </div>
-	      <div class="banner-image" style="right:-200px;top:80px;"> <img alt="Amazing" style="width:680px;height:400px;src="images/banner4.jpg"/> </div>
+	      <div class="banner-image" style="right:-20px;top:80px;"> <img alt="Amazing" style="width:680px;height:400px;" src="images/banner4.jpg"/> </div>
         </div>
 	  </div>
 	</div>
@@ -70,8 +72,8 @@ if(isIE6){
 					<a href="signup.jsp" class="button default banner-btn">注册</a>
 				</div>
 			</div>
-			<div class="banner-image" style="left:-200px;top:80px;">
-				<img style="width:790px;height:340px;" src=""/>
+			<div class="banner-image" style="left: 100px; top: 80px;">
+				<img style="width:590px;height:340px;" src="images/banner5.jpg"/>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -84,12 +86,12 @@ if(isIE6){
 			<div class="banner-content" style="width:300px;">
 				这里还是一段介绍
 				<div class="banner-op">
-					<a href="login.jsp" class="button green banner-btn">立即登录</a>&nbsp;&nbsp;&nbsp;
-					<a href="signup.jsp" class="button default banner-btn">注册</a>
+					<a href="/login" class="button green banner-btn">立即登录</a>&nbsp;&nbsp;&nbsp;
+					<a href="/signup" class="button default banner-btn">注册</a>
 				</div>
 			</div>
 			<div class="banner-image" style="right:-200px;top:10px;">
-				<img style="width:700px;height:400px" src="images/banner4.jpg"/>
+				<img style="width:700px;height:400px" src="images/banner6.jpg"/>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -217,4 +219,7 @@ if(isIE6){
 </div>
 
 </body>
+
+<script type="text/javascript" charset="UTF-8" src="js/home.js"></script>
+
 </html>

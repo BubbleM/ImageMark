@@ -1,4 +1,5 @@
 $().ready(function(){
+	//显示标记情况
 	 $("body").delegate(".teams-item","click",function(){
 	 	$(".team-content-right").show();
 	 	$("#file_info_name").text(this.id);
@@ -45,7 +46,8 @@ $.ajax({
 		  }
 	   }
 	 });
-	 
+	//显示参加的小组
+     
 	 //显示添加小组
 	 $("#teams-addbutton").click(function(){
 	 	$("#teams-add").show();
@@ -57,6 +59,9 @@ $.ajax({
 	 	$("#teams-join").show();
 	 	$("#backallteams").show();
 	 	$("#teams-add").hide();
+	 	$(".team-content-right").show();
+	 	$("#team-mark-result").hide();
+	 	$("#team-joined").show();
 	 	
 	 	$.ajax({
 	 		url:"getteam-notjoin.do",
@@ -67,6 +72,23 @@ $.ajax({
 	 				var option="";
 	 				 option+="<option value='"+data[i].teamId+"' >"+data[i].teamName+"</option>";
 	 				 $("#team-join").append(option);
+	 			}
+	 		},
+	 		error:function(){
+	 			alert("出现错误！");
+	 		}
+	 	});
+	 	
+	 	//用以显示已经加入的小组
+	 	$.ajax({
+	 		url:"teamlistJoined.do",
+	 		type:"POST",
+	 		dataType:"json",
+	 		success:function(data){
+	 			for(var i=0;data[i]!=null;i++){
+	 				var option="";
+	 				 option+="<li>"+data[i].teamName+"</li>";
+	 				 $("#team-joined-box").append(option);
 	 			}
 	 		},
 	 		error:function(){
@@ -155,6 +177,23 @@ $.ajax({
 								$.post("jointeam.do",{teamId:teamid},function(data){
 									if(data == "success"){
 										alert("加入群组成功！");
+										//用以显示已经加入的小组
+									 	$.ajax({
+									 		url:"teamlistJoined.do",
+									 		type:"POST",
+									 		dataType:"json",
+									 		success:function(data){
+									 			 $("#team-joined-box").empty();
+									 			for(var i=0;data[i]!=null;i++){
+									 				var option="";
+									 				 option+="<li>"+data[i].teamName+"</li>";
+									 				 $("#team-joined-box").append(option);
+									 			}
+									 		},
+									 		error:function(){
+									 			alert("出现错误！");
+									 		}
+									 	});
 									}else{
 										alert("加入群组失败！");
 									}

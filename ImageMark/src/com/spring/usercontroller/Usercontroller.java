@@ -157,6 +157,15 @@ public class Usercontroller {
 		return teams;
 	} 
 	
+	@RequestMapping("/teamlistJoined.do")
+	public @ResponseBody List<Team> teamListJoined(){
+		int userId = ud.getNowUserId();
+		List<Team> teams = new ArrayList<Team>();
+		teams = ud.getAllTeamJoined(userId);
+		
+		return teams;
+	} 
+	
 	@RequestMapping("/team-member.do")
 	public String teamMember(int teamid,String teamname,Model model){
 		List<UserInfo> users = new ArrayList<UserInfo>();
